@@ -1,0 +1,33 @@
+<launch>
+    <node name="dynamixel_manager" pkg="dynamixel_hardware_interface" type="controller_manager" output="screen" >
+        <rosparam file="$(find au_crustcrawler_base)/conf/cpp/manager.yaml" command="load"/>
+    </node>
+    
+    <rosparam file="$(find au_crustcrawler_base)/conf/cpp/joints.yaml" command="load"/>
+    <node name="controller_spawner" pkg="dynamixel_hardware_interface" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=ttyUSB0
+                joint1
+                joint2
+                joint3
+                joint4
+                gripper
+                arm_controller
+                "
+          output="screen"/>
+
+    <!-- <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 1.5707 0 wrist_temp wrist 100" /> -->
+
+    <node name="joint_state_aggregator" pkg="clam_controller" type="joint_state_aggregator" output="screen">
+        <rosparam>
+            rate: 10
+            controllers:
+                - joint1
+                - joint2
+                - joint3
+                - joint4
+                
+        </rosparam>
+    </node>
+
+</launch>

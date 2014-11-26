@@ -1,0 +1,70 @@
+joint1:
+    type: dynamixel_hardware_interface/JointPositionController
+    joint: joint1
+    max_velocity: 0.55
+    motors:
+        - id: 1
+          init: 512
+          min: 0
+          max: 1023
+
+
+joint2:
+    type: dynamixel_hardware_interface/JointPositionController
+    joint: joint2
+    max_velocity: 0.55
+    motors:
+        - id: 2
+          init: 511
+          min: 1023
+          max: 0
+        - id: 3
+          reversed: true
+
+joint3:
+    type: dynamixel_hardware_interface/JointPositionController
+    joint: joint3
+    max_velocity: 0.55
+    motors:
+        - id: 4
+          init: 511
+          min: 1023
+          max: 0
+        - id: 5
+          reversed: true
+
+joint4:
+    type: dynamixel_hardware_interface/JointPositionController
+    joint: joint4
+    max_velocity: 0.55
+    motors:
+        - id: 6
+          init: 512
+          min: 0
+          max: 1023
+
+gripper:
+    type: dynamixel_hardware_interface/JointPositionController
+    joint: gripper
+    max_velocity: 1.55
+    motors:
+        - id: 7
+          init: 512
+          min: 0
+          max: 1023
+          compliance_margin: 2
+          compliance_slope: 64
+
+
+
+arm_controller:
+    type: dynamixel_hardware_interface/JointTrajectoryActionController
+    dependencies:
+        - joint1
+        - joint2
+        - joint3
+        - joint4
+    joint_trajectory_action_node:
+        min_velocity: 0.001
+
+
