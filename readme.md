@@ -2,6 +2,7 @@ Introduction
 -----------
 This package provides an example of how to configure the dynamixel components and how to
 make a model of the robot arm. 
+Go to the wiki for exercises and tutorials related to the ROB1 course at Aarhus University.
 
 Clone the aucrustcrawlerbase package:
 
