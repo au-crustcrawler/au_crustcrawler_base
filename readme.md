@@ -10,13 +10,13 @@ Clone the aucrustcrawlerbase package:
 
 	git clone https://github.com/au-crustcrawler/au_crustcrawler_base.git
 
-Or if the folder exist just:
+Or if the folder exists just:
 
 	cd ~/catkin_ws/src/au_crustcrawler_base/
 
 	git pull
 
-You will also need the quickui package which is done by 
+You will also need the quickui package, which is done by 
 
 	cd ~/catkin_ws/src
 
