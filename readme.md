@@ -24,6 +24,7 @@ You will also need the quickui package, which is done by
 
 Remember to catkin_make your workspace and source devel/setup.bash
 
+	cd ~/catkin_ws
 	catkin_make
 	source devel/setup.bash
 
